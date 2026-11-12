@@ -16,7 +16,7 @@
             "agentui_connector/static/src/**/*",
         ],
     },
-    "images": ["static/description/icon.png"],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": True,
 }
