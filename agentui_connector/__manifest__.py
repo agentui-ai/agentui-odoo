@@ -1,7 +1,7 @@
 {
     "name": "AI App Builder for Odoo | AgentUI",
     "summary": "Build custom apps, dashboards, customer portals and AI agents on your Odoo data. Describe what you need and AI builds it. No code.",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.0.1",
     "category": "Productivity",
     "author": "AgentUI",
     "website": "https://agentui.ai",
