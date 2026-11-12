@@ -1,0 +1,63 @@
+# Spanish translation of agentui_connector
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: es\n"
+
+msgid "AgentUI app URL"
+msgstr "URL de la app de AgentUI"
+
+msgid "Published AgentUI app to show under the AgentUI menu. Must start with https://."
+msgstr "App publicada de AgentUI que se muestra en el menú AgentUI. Debe empezar con https://."
+
+msgid "The AgentUI app URL must start with https://"
+msgstr "La URL de la app de AgentUI debe empezar con https://"
+
+msgid "App to open in Odoo"
+msgstr "App que se abre en Odoo"
+
+msgid "Paste the link of a published AgentUI app. It opens under the AgentUI menu."
+msgstr "Pega el enlace de una app publicada de AgentUI. Se abre en el menú AgentUI."
+
+msgid "Odoo URL"
+msgstr "URL de Odoo"
+
+msgid "Database"
+msgstr "Base de datos"
+
+msgid "Username"
+msgstr "Usuario"
+
+msgid "Copied"
+msgstr "Copiado"
+
+msgid "Couldn't copy. Select the text and copy it by hand."
+msgstr "No se pudo copiar. Selecciona el texto y cópialo a mano."
+
+msgid "Build apps and AI agents that read and write your Odoo data."
+msgstr "Crea apps y agentes de IA que leen y escriben tus datos de Odoo."
+
+msgid "1. Connect Odoo in AgentUI"
+msgstr "1. Conecta Odoo en AgentUI"
+
+msgid "Open AgentUI and fill in these values. For the password, use an Odoo API key\n"
+"                    (My Profile → Account Security → New API Key)."
+msgstr "Abre AgentUI y llena estos datos. Como contraseña usa una API key de Odoo\n"
+"                    (Mi perfil → Seguridad de la cuenta → Nueva API key)."
+
+msgid "Copy"
+msgstr "Copiar"
+
+msgid "Open AgentUI"
+msgstr "Abrir AgentUI"
+
+msgid "2. Show your app here"
+msgstr "2. Muestra tu app aquí"
+
+msgid "Publish an app in AgentUI, then paste its link in\n"
+"                    Settings → AgentUI. It will open in this menu."
+msgstr "Publica una app en AgentUI y pega su enlace en\n"
+"                    Ajustes → AgentUI. Se abrirá en este menú."
+
+msgid "Ask an Odoo admin to add your AgentUI app link in Settings → AgentUI."
+msgstr "Pide a un admin de Odoo que agregue el enlace de tu app en Ajustes → AgentUI."

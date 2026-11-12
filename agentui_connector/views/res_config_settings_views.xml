@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_agentui" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.agentui</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app string="AgentUI" name="agentui_connector">
+                    <block title="AgentUI">
+                        <setting string="App to open in Odoo"
+                                 help="Paste the link of a published AgentUI app. It opens under the AgentUI menu.">
+                            <field name="agentui_app_url" placeholder="https://your-app.agentui.ai"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="agentui_connector.AgentUIAction">
+        <div class="o_agentui h-100">
+            <iframe t-if="state.info.app_url" class="o_agentui_frame"
+                    t-att-src="state.info.app_url"
+                    allow="clipboard-write; camera; microphone"/>
+            <div t-else="" class="o_agentui_welcome container py-5">
+                <h1>AgentUI</h1>
+                <p class="lead">Build apps and AI agents that read and write your Odoo data.</p>
+
+                <h4 class="mt-4">1. Connect Odoo in AgentUI</h4>
+                <p>Open AgentUI and fill in these values. For the password, use an Odoo API key
+                    (My Profile → Account Security → New API Key).</p>
+                <table class="table table-sm w-auto">
+                    <tr t-foreach="fields" t-as="field" t-key="field.key">
+                        <th class="pe-3" t-esc="field.label"/>
+                        <td><code t-esc="field.value"/></td>
+                        <td><button class="btn btn-link btn-sm" t-on-click="() => this.copy(field.value)">Copy</button></td>
+                    </tr>
+                </table>
+                <a class="btn btn-primary" t-att-href="connectUrl" target="_blank" rel="noopener">Open AgentUI</a>
+
+                <h4 class="mt-5">2. Show your app here</h4>
+                <p t-if="state.info.is_admin">Publish an app in AgentUI, then paste its link in
+                    Settings → AgentUI. It will open in this menu.</p>
+                <p t-else="">Ask an Odoo admin to add your AgentUI app link in Settings → AgentUI.</p>
+            </div>
+        </div>
+    </t>
+</templates>
