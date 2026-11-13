@@ -1,66 +1,21 @@
-# AI App Builder for Odoo | AgentUI
+# AI App Builder for Odoo Online | AgentUI (Odoo 20)
 
-**Build custom apps, dashboards, customer portals and AI agents on your Odoo data. Describe what you need and AgentUI builds it. No code.**
+**Build custom apps, dashboards and customer portals on your Odoo data. Describe what you need and AgentUI builds it. No code.**
 
-[![Odoo Apps Store](https://img.shields.io/badge/Odoo%20Apps%20Store-AgentUI-714B67)](https://apps.odoo.com/apps/modules/18.0/agentui_connector)
-![Odoo 18](https://img.shields.io/badge/Odoo-18.0-714B67)
-![License: LGPL-3](https://img.shields.io/badge/license-LGPL--3-blue)
+This branch (`20.0`) holds **`agentui_online`**, the AgentUI module for **Odoo Online** (odoo.com) on Odoo 20: a data module with no Python, so Odoo Online accepts it.
 
-👉 **Install it from the Odoo Apps Store: [apps.odoo.com/apps/modules/18.0/agentui_connector](https://apps.odoo.com/apps/modules/18.0/agentui_connector)**
+## Requirements
+- Odoo Online on the **Custom** plan (Odoo only allows connecting other apps, its external API, on that plan). Odoo.sh and on-premise work too.
+- An Odoo administrator to connect it once.
 
-![AgentUI AI app builder for Odoo: custom apps and dashboards on your Odoo data](agentui_connector/static/description/banner.png)
+## Install
+1. Install it from the Odoo Apps Store, or download this folder as a zip.
+2. Zip install: activate developer mode, then **Apps → Import Module**, upload the zip, Install.
+3. Open **AgentUI** on the Odoo home screen and press **Connect to AgentUI**. Approve in the AgentUI window and confirm your Odoo password: the module creates the API key for you.
 
-## What you can build on Odoo
+If you sign in to Odoo with Google or Odoo.com, the password Odoo asks for is your odoo.com account password (reset it on odoo.com if you never set one).
 
-- **Custom Odoo dashboards and reports**: sales, invoices, inventory and CRM pipeline in one screen.
-- **Odoo customer and supplier portals**: clients see their orders and invoices without an Odoo user.
-- **Approval flows and internal tools**: quotes, purchase approvals, field service forms, checklists.
-- **AI agents for Odoo** that read and write records: create leads, look up customers, prepare sales orders.
-- **Mobile apps for your team**: warehouse, sales reps and technicians on their phone.
+## Source
+The source lives on branch [`18.0`](https://github.com/agentui-ai/agentui-odoo/tree/18.0) (`agentui_online/`); this branch is built from it with `node tools/build_online.mjs 20` (Odoo 20 uses `ir.access` instead of `ir.model.access` + `ir.rule`).
 
-## Works with your Odoo data
-
-AgentUI connects through the standard Odoo external API (XML-RPC) with your URL, database, user and an Odoo API key.
-
-| Odoo data | What AgentUI can do |
-| --- | --- |
-| Customers and contacts | Read, create, update |
-| Sales orders | Read, create, confirm |
-| Invoices, products, inventory | Read |
-| CRM leads | Read, create |
-| Sales and inventory reports | Read |
-| Any other Odoo model | Whatever the connected user can access |
-
-Your Odoo access rules still apply: AgentUI only sees what the connected user can see.
-
-## How it works
-
-1. Install the **AgentUI** module from the [Odoo Apps Store](https://apps.odoo.com/apps/modules/18.0/agentui_connector). A new **AgentUI** menu appears in Odoo.
-2. Click **Open AgentUI** and connect Odoo with the values shown on screen.
-3. Describe the app you need. AgentUI builds it on your Odoo data.
-4. Paste the app link in **Settings > AgentUI**. Your team opens it from the Odoo menu.
-
-## Compatibility
-
-- Odoo 18 Community and Enterprise
-- Odoo.sh and on-premise. Standard Odoo Online (SaaS) does not allow third-party modules.
-- Requires an AgentUI account: [agentui.ai](https://agentui.ai)
-
-## Manual install
-
-```bash
-git clone -b 18.0 https://github.com/agentui-ai/agentui-odoo.git
-# add the folder to your Odoo addons_path, update the app list, then install "AgentUI"
-```
-
-## Repository layout
-
-One branch per Odoo version (`18.0`, ...). `agentui_connector/` is the Odoo module (menu, client action, settings).
-
-## Crea apps con IA sobre tus datos de Odoo
-
-Dashboards, portales de clientes, aprobaciones y agentes de IA conectados a Odoo. Describe la app que necesitas y AgentUI la construye sobre tus clientes, pedidos de venta, facturas, productos e inventario. Sin programar. Instálalo desde la [Odoo Apps Store](https://apps.odoo.com/apps/modules/18.0/agentui_connector).
-
-## License
-
-LGPL-3
+License: LGPL-3.
