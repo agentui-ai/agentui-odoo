@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="agentui_online.Hub">
+        <div class="o_agentui_hub h-100 overflow-auto">
+            <div class="o_agentui_page container-fluid py-4 py-md-5">
+                <div t-if="this.state.error" class="alert alert-danger d-flex gap-2 align-items-start" role="alert">
+                    <i class="fa fa-exclamation-circle mt-1" aria-hidden="true" />
+                    <span class="me-auto" t-out="this.state.error" />
+                    <button type="button" class="btn-close" t-att-aria-label="this.tr('Close')" t-on-click="() => this.state.error = ''" />
+                </div>
+                <div t-if="this.state.syncing" class="alert alert-info d-flex gap-2 align-items-center" role="status">
+                    <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true" />
+                    <span t-out="this.tr('Adding your apps to Odoo...')" />
+                    <b t-if="this.state.syncing.total" t-out="this.state.syncing.done + ' / ' + this.state.syncing.total" />
+                </div>
+                <div t-if="this.state.connecting" class="alert alert-info d-flex gap-2 align-items-center" role="status">
+                    <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true" />
+                    <span t-out="this.tr('Approve the connection in the AgentUI window. This page finishes on its own.')" />
+                </div>
+                <div t-if="this.state.info.connected and this.state.info.needs_reconnect" class="alert alert-warning d-flex flex-wrap align-items-center gap-2" role="alert">
+                    <i class="fa fa-plug" aria-hidden="true" />
+                    <span class="me-auto" t-out="this.tr('AgentUI stopped accepting this connection. Your apps are still here; reconnect to keep them in sync.')" />
+                    <button t-if="this.state.info.is_admin" class="btn btn-warning btn-sm" t-att-disabled="this.state.connecting" t-on-click="(ev) => this.connect(ev)" t-out="this.tr('Reconnect')" />
+                    <span t-else="" class="small" t-out="this.tr('Ask an Odoo administrator to reconnect.')" />
+                </div>
+
+                <t t-if="!this.state.info.connected" t-call="agentui_online.HubWelcome" />
+                <t t-else="">
+                    <t t-call="agentui_online.HubHeader" />
+                    <t t-call="agentui_online.HubPrompt" />
+                    <AgentUIAppList apps="this.state.info.apps" onOpen="(...args) => this.openApp(...args)" onManage="this.state.info.is_admin ? this.manageApp.bind(this) : undefined" />
+                </t>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="agentui_online.HubHeader">
+        <div class="d-flex align-items-center gap-3 mb-4">
+            <img t-att-src="this.iconSrc" class="o_agentui_logo" alt="" />
+            <div class="me-auto min-w-0">
+                <h1 class="o_agentui_title mb-0">AgentUI</h1>
+                <div class="text-muted small text-truncate">
+                    <span class="o_agentui_dot" aria-hidden="true" />
+                    <span t-out="this.tr('Connected to')" /> <b t-out="this.state.info.connected_company" />
+                </div>
+            </div>
+            <Dropdown t-if="this.state.info.is_admin" position="'bottom-end'">
+                <button class="btn btn-light o_agentui_more" t-att-disabled="this.state.busy" t-att-title="this.tr('Connection settings')" t-att-aria-label="this.tr('Connection settings')">
+                    <i class="fa fa-ellipsis-h fa-lg" aria-hidden="true" />
+                </button>
+                <t t-set-slot="content">
+                    <div t-if="this.state.info.connected_email" class="dropdown-header small text-muted text-wrap">
+                        <span t-out="this.tr('Signed in to AgentUI as')" /><br /><b t-out="this.state.info.connected_email" />
+                    </div>
+                    <div t-if="this.state.info.connected_email" class="dropdown-divider" />
+                    <DropdownItem onSelected="(...args) => this.sync(...args)"><i class="fa fa-refresh me-2" aria-hidden="true" /><t t-out="this.tr('Sync apps')" /></DropdownItem>
+                    <DropdownItem t-if="this.debug" onSelected="(...args) => this.editAddresses(...args)"><i class="fa fa-server me-2" aria-hidden="true" /><t t-out="this.tr('AgentUI addresses')" /></DropdownItem>
+                    <DropdownItem onSelected="(...args) => this.disconnect(...args)" class="'text-danger'"><i class="fa fa-chain-broken me-2" aria-hidden="true" /><t t-out="this.tr('Disconnect')" /></DropdownItem>
+                </t>
+            </Dropdown>
+        </div>
+    </t>
+
+    <t t-name="agentui_online.HubPrompt">
+        <section class="o_agentui_hero mb-5">
+            <div class="o_agentui_mode mb-3" role="group" t-att-aria-label="this.tr('What to build')">
+                <button type="button" class="btn o_agentui_mode_btn" t-att-class="{ active: !this.isAutomation }"
+                        t-att-aria-pressed="!this.isAutomation" t-on-click="() => this.setMode('apps')">
+                    <i class="fa fa-th-large me-2" aria-hidden="true" /><t t-out="this.tr('Apps / Dashboards')" />
+                </button>
+                <button type="button" class="btn o_agentui_mode_btn" t-att-class="{ active: this.isAutomation }"
+                        t-att-aria-pressed="this.isAutomation" t-on-click="() => this.setMode('automations')">
+                    <i class="fa fa-bolt me-2" aria-hidden="true" /><t t-out="this.tr('Automations')" />
+                </button>
+            </div>
+            <h2 class="o_agentui_hero_title" t-out="this.copy.title" />
+            <p class="text-muted mb-3" t-out="this.copy.subtitle" />
+            <textarea id="agentui_prompt" class="form-control o_agentui_prompt" rows="3" maxlength="1600"
+                      t-att-aria-label="this.copy.title" t-att-value="this.state.prompt" t-on-input="(ev) => this.state.prompt = ev.target.value" t-att-placeholder="this.copy.placeholder" />
+            <div class="d-flex flex-wrap align-items-center gap-2 mt-3">
+                <span class="text-muted small me-1" t-out="this.tr('Try:')" />
+                <button t-foreach="this.ideas" t-as="idea" t-key="idea_index" type="button"
+                        class="btn o_agentui_chip" t-on-click="() => this.useIdea(idea)" t-out="idea.label" />
+            </div>
+            <div class="d-flex flex-wrap align-items-center gap-2 mt-4">
+                <button class="btn btn-lg o_agentui_build" t-on-click="(ev) => this.build(ev)">
+                    <i class="fa fa-magic me-2" aria-hidden="true" /><t t-out="this.tr('Build it')" />
+                </button>
+                <button class="btn btn-lg btn-link o_agentui_newtab" t-on-click="(ev) => this.buildInNewTab(ev)">
+                    <t t-out="this.tr('Open in a new tab')" /> <i class="fa fa-external-link ms-1" aria-hidden="true" />
+                </button>
+            </div>
+            <p class="text-muted small mt-3 mb-0" t-out="this.copy.after" />
+        </section>
+    </t>
+
+    <t t-name="agentui_online.HubWelcome">
+        <section class="o_agentui_welcome text-center mx-auto">
+            <img t-att-src="this.iconSrc" class="o_agentui_logo o_agentui_logo_lg mb-4" alt="" />
+            <h1 class="o_agentui_welcome_title" t-out="this.tr('Build apps on your Odoo data')" />
+            <p class="lead text-muted mx-auto" t-out="this.tr('Describe the app you need. AgentUI builds it, and it opens from your Odoo home menu.')" />
+            <t t-if="this.state.info.is_admin">
+                <button class="btn btn-lg o_agentui_build mt-2" t-att-disabled="this.state.connecting" t-on-click="(ev) => this.connect(ev)"
+                        t-out="this.state.connecting ? this.tr('Connecting…') : this.tr('Connect to AgentUI')" />
+                <p class="text-muted small mt-3 mx-auto o_agentui_narrow" t-out="this.tr('Sign in or create a free AgentUI account, then approve. Odoo creates the API key for you, so there is nothing to copy.')" />
+                <button t-if="this.debug" type="button" class="btn btn-link btn-sm text-muted" t-on-click="(ev) => this.editAddresses(ev)">
+                    <i class="fa fa-server me-1" aria-hidden="true" /><t t-out="this.tr('AgentUI addresses')" />
+                </button>
+            </t>
+            <div t-else="" class="alert alert-light border d-inline-block mt-2">
+                <i class="fa fa-info-circle me-2" aria-hidden="true" /><t t-out="this.tr('Ask an Odoo administrator to open this menu and press Connect to AgentUI.')" />
+            </div>
+            <div class="row g-3 mt-4 text-start">
+                <div t-foreach="this.steps" t-as="step" t-key="step_index" class="col-12 col-md-4">
+                    <div class="o_agentui_step h-100">
+                        <span class="o_agentui_step_num" t-out="step_index + 1" />
+                        <div class="fw-semibold mt-2" t-out="step.title" />
+                        <div class="small text-muted" t-out="step.text" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </t>
+</templates>

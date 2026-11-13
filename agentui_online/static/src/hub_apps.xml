@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="agentui_online.AppList">
+        <section>
+            <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                <h2 class="o_agentui_section_title mb-0 me-auto">
+                    <span t-out="this.tr('Your apps')" />
+                    <span t-if="this.props.apps.length" class="o_agentui_count ms-2" t-out="this.props.apps.length" />
+                </h2>
+                <div t-if="this.showSearch" class="o_agentui_search position-relative">
+                    <i class="fa fa-search position-absolute text-muted" aria-hidden="true" />
+                    <input type="search" class="form-control" t-att-value="this.state.query" t-on-input="(ev) => this.state.query = ev.target.value"
+                           t-att-placeholder="this.tr('Search apps')" t-att-aria-label="this.tr('Search apps')" />
+                </div>
+            </div>
+
+            <div t-if="!this.props.apps.length" class="o_agentui_empty text-center">
+                <i class="fa fa-th-large fa-2x mb-3" aria-hidden="true" />
+                <div class="fw-semibold" t-out="this.tr('No apps yet')" />
+                <div class="text-muted small" t-out="this.tr('Pick an idea above or describe your own. Your app shows up here and in the Odoo home menu.')" />
+            </div>
+            <div t-elif="!this.visibleApps.length" class="o_agentui_empty text-center text-muted small" t-out="this.tr('No apps match your search.')" />
+
+            <div class="row g-3">
+                <div t-foreach="this.visibleApps" t-as="app" t-key="app.id" class="col-12 col-sm-6 col-xl-4 position-relative">
+                    <div t-if="this.props.onManage" class="o_agentui_card_menu">
+                        <Dropdown position="'bottom-end'">
+                            <button class="btn btn-light btn-sm o_agentui_more" t-att-title="this.tr('Manage %(name)s', { name: app.name })" t-att-aria-label="this.tr('Manage app')">
+                                <i class="fa fa-ellipsis-h" aria-hidden="true" />
+                            </button>
+                            <t t-set-slot="content">
+                                <t t-foreach="this.manageItems" t-as="item" t-key="item.key">
+                                    <div t-if="item.key === 'users'" class="dropdown-divider" />
+                                    <DropdownItem onSelected="() => this.props.onManage(app, item)">
+                                        <i t-attf-class="fa {{ item.icon }} me-2 text-muted" aria-hidden="true" /><t t-out="item.label" />
+                                    </DropdownItem>
+                                </t>
+                            </t>
+                        </Dropdown>
+                    </div>
+                    <a href="#" class="o_agentui_card d-flex gap-3 align-items-start h-100 text-reset text-decoration-none"
+                       t-att-title="app.name" t-on-click.prevent="() => this.props.onOpen(app)">
+                        <img t-if="app.has_icon" t-att-src="app.icon_src" class="o_agentui_icon" alt="" />
+                        <span t-else="" class="o_agentui_icon o_agentui_monogram" t-att-style="this.tileStyle(app)"
+                              aria-hidden="true" t-out="this.initials(app)" />
+                        <div class="min-w-0">
+                            <div class="o_agentui_name fw-semibold" t-out="app.name" />
+                            <div t-if="app.description" class="small text-muted o_agentui_desc" t-out="app.description" />
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </t>
+</templates>

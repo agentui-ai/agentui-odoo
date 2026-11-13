@@ -1,0 +1,45 @@
+{
+    "name": "AI App Builder for Odoo Online | AgentUI",
+    "summary": "Build custom apps, dashboards and customer portals on your Odoo data. Made for Odoo Online on the Custom plan: no Python, install it from Apps > Import Module.",
+    "version": "18.0.2.0.0",
+    "category": "Productivity",
+    "author": "AgentUI",
+    "website": "https://agentui.ai",
+    "license": "LGPL-3",
+    "depends": ["base", "web"],
+    # A data module: Odoo Online refuses Python. Models are x_ records,
+    # access rules are ir.model.access records, logic runs in the browser.
+    "data": [
+        "data/models.xml",
+        "security/access.xml",
+        "data/records.xml",
+        "views/views.xml",
+    ],
+    # Every file listed one by one: a "**" glob does not resolve for an
+    # imported module and takes down the whole Odoo backend (500 on /odoo).
+    "assets": {
+        "web.assets_backend": [
+            "agentui_online/static/src/agentui.scss",
+            "agentui_online/static/src/i18n_es.js",
+            "agentui_online/static/src/i18n.js",
+            "agentui_online/static/src/config.js",
+            "agentui_online/static/src/api.js",
+            "agentui_online/static/src/password_dialog.js",
+            "agentui_online/static/src/password_dialog.xml",
+            "agentui_online/static/src/api_key.js",
+            "agentui_online/static/src/connect.js",
+            "agentui_online/static/src/sync.js",
+            "agentui_online/static/src/hub_apps.js",
+            "agentui_online/static/src/hub_apps.xml",
+            "agentui_online/static/src/hub.js",
+            "agentui_online/static/src/hub.xml",
+            "agentui_online/static/src/builder.js",
+            "agentui_online/static/src/builder.xml",
+            "agentui_online/static/src/app.js",
+            "agentui_online/static/src/app.xml",
+        ],
+    },
+    "images": ["static/description/icon.png"],
+    "installable": True,
+    "application": True,
+}

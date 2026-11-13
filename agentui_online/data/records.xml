@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The single settings record and the single secret record. noupdate: a
+  re-import keeps the connection and any address an administrator changed.
+-->
+<odoo noupdate="1">
+    <record id="settings_main" model="x_agentui_settings">
+        <field name="x_name">AgentUI</field>
+        <field name="x_connected" eval="False"/>
+        <field name="x_api_url">https://api.agentui.ai</field>
+        <field name="x_app_url">https://app.agentui.ai</field>
+    </record>
+    <record id="secret_main" model="x_agentui_secret">
+        <field name="x_name">AgentUI connector token</field>
+    </record>
+</odoo>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Odoo Online accepts no Python, so the models are data: x_ prefixed ir.model
+  and ir.model.fields records. Uninstalling the module drops them.
+-->
+<odoo>
+    <!-- One AgentUI app, shown as its own icon on the Odoo home screen. -->
+    <record id="model_x_agentui_app" model="ir.model">
+        <field name="name">AgentUI app</field>
+        <field name="model">x_agentui_app</field>
+        <field name="info">An AgentUI app mirrored by an Odoo administrator (Sync apps).</field>
+    </record>
+    <record id="field_x_agentui_app_name" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_app"/>
+        <field name="name">x_name</field>
+        <field name="field_description">Name</field>
+        <field name="ttype">char</field>
+        <field name="required" eval="True"/>
+    </record>
+    <record id="field_x_agentui_app_agentui_id" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_app"/>
+        <field name="name">x_agentui_id</field>
+        <field name="field_description">AgentUI app id</field>
+        <field name="ttype">char</field>
+        <field name="required" eval="True"/>
+        <field name="index" eval="True"/>
+    </record>
+    <record id="field_x_agentui_app_url" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_app"/>
+        <field name="name">x_url</field>
+        <field name="field_description">App address</field>
+        <field name="ttype">char</field>
+        <field name="required" eval="True"/>
+    </record>
+    <record id="field_x_agentui_app_description" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_app"/>
+        <field name="name">x_description</field>
+        <field name="field_description">Description</field>
+        <field name="ttype">text</field>
+    </record>
+    <record id="field_x_agentui_app_sequence" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_app"/>
+        <field name="name">x_sequence</field>
+        <field name="field_description">Sequence</field>
+        <field name="ttype">integer</field>
+    </record>
+    <record id="field_x_agentui_app_has_icon" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_app"/>
+        <field name="name">x_has_icon</field>
+        <field name="field_description">Has its own icon</field>
+        <field name="ttype">boolean</field>
+    </record>
+    <record id="field_x_agentui_app_icon_url" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_app"/>
+        <field name="name">x_icon_url</field>
+        <field name="field_description">Icon address last tried</field>
+        <field name="ttype">char</field>
+    </record>
+    <record id="field_x_agentui_app_menu_id" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_app"/>
+        <field name="name">x_menu_id</field>
+        <field name="field_description">Home menu entry</field>
+        <field name="ttype">many2one</field>
+        <field name="relation">ir.ui.menu</field>
+        <field name="on_delete">set null</field>
+    </record>
+    <record id="field_x_agentui_app_action_id" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_app"/>
+        <field name="name">x_action_id</field>
+        <field name="field_description">Action</field>
+        <field name="ttype">many2one</field>
+        <field name="relation">ir.actions.client</field>
+        <field name="on_delete">set null</field>
+    </record>
+
+    <!-- Set once the fields exist: Odoo checks the order fields right away. -->
+    <record id="model_x_agentui_app" model="ir.model">
+        <field name="order">x_sequence, x_name, id</field>
+    </record>
+
+    <!-- Connection settings every employee may read (no secrets here). -->
+    <record id="model_x_agentui_settings" model="ir.model">
+        <field name="name">AgentUI settings</field>
+        <field name="model">x_agentui_settings</field>
+        <field name="info">Connection state and AgentUI addresses. Employees read, administrators write.</field>
+    </record>
+    <record id="field_x_agentui_settings_name" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_settings"/>
+        <field name="name">x_name</field>
+        <field name="field_description">Name</field>
+        <field name="ttype">char</field>
+    </record>
+    <record id="field_x_agentui_settings_connected" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_settings"/>
+        <field name="name">x_connected</field>
+        <field name="field_description">Connected</field>
+        <field name="ttype">boolean</field>
+    </record>
+    <record id="field_x_agentui_settings_needs_reconnect" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_settings"/>
+        <field name="name">x_needs_reconnect</field>
+        <field name="field_description">Needs reconnect</field>
+        <field name="ttype">boolean</field>
+    </record>
+    <record id="field_x_agentui_settings_company" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_settings"/>
+        <field name="name">x_company_name</field>
+        <field name="field_description">AgentUI company</field>
+        <field name="ttype">char</field>
+    </record>
+    <record id="field_x_agentui_settings_integration" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_settings"/>
+        <field name="name">x_integration_id</field>
+        <field name="field_description">AgentUI integration id</field>
+        <field name="ttype">char</field>
+    </record>
+    <record id="field_x_agentui_settings_api_url" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_settings"/>
+        <field name="name">x_api_url</field>
+        <field name="field_description">AgentUI API address</field>
+        <field name="ttype">char</field>
+    </record>
+    <record id="field_x_agentui_settings_app_url" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_settings"/>
+        <field name="name">x_app_url</field>
+        <field name="field_description">AgentUI app address</field>
+        <field name="ttype">char</field>
+    </record>
+
+    <!-- The connector token. Administrators only (see security/access.xml). -->
+    <record id="model_x_agentui_secret" model="ir.model">
+        <field name="name">AgentUI connection secret</field>
+        <field name="model">x_agentui_secret</field>
+        <field name="info">The AgentUI connector token. Only Odoo administrators can read it.</field>
+    </record>
+    <record id="field_x_agentui_secret_name" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_secret"/>
+        <field name="name">x_name</field>
+        <field name="field_description">Name</field>
+        <field name="ttype">char</field>
+    </record>
+    <record id="field_x_agentui_secret_token" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_secret"/>
+        <field name="name">x_token</field>
+        <field name="field_description">Connector token</field>
+        <field name="ttype">char</field>
+    </record>
+    <record id="field_x_agentui_secret_expires" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_secret"/>
+        <field name="name">x_expires_at</field>
+        <field name="field_description">Token expires at</field>
+        <field name="ttype">char</field>
+    </record>
+    <record id="field_x_agentui_secret_email" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_secret"/>
+        <field name="name">x_email</field>
+        <field name="field_description">Connected AgentUI email</field>
+        <field name="ttype">char</field>
+    </record>
+
+    <!--
+      One-time sign-in proof: an employee's browser creates one when it opens
+      an app; AgentUI reads it with the connected admin's API key (Odoo stamps
+      create_uid, so AgentUI knows who really opened the app), then deletes it.
+    -->
+    <record id="model_x_agentui_signin" model="ir.model">
+        <field name="name">AgentUI sign-in proof</field>
+        <field name="model">x_agentui_signin</field>
+        <field name="info">Single-use proof that an Odoo user opened an AgentUI app. Deleted once used.</field>
+    </record>
+    <record id="field_x_agentui_signin_nonce" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_signin"/>
+        <field name="name">x_nonce</field>
+        <field name="field_description">Nonce</field>
+        <field name="ttype">char</field>
+    </record>
+    <record id="field_x_agentui_signin_workflow" model="ir.model.fields">
+        <field name="model_id" ref="model_x_agentui_signin"/>
+        <field name="name">x_workflow_id</field>
+        <field name="field_description">AgentUI app id</field>
+        <field name="ttype">char</field>
+    </record>
+</odoo>

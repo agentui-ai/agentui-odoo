@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_agentui_main" model="ir.actions.client">
+        <field name="name">AgentUI</field>
+        <field name="tag">agentui_online.main</field>
+    </record>
+
+    <!--
+      web_icon="module,path" is read from the addons path, which an imported
+      module does not have: the icon would be blank. web_icon_data with
+      file= is read from the uploaded zip while the module imports.
+    -->
+    <record id="menu_agentui_root" model="ir.ui.menu">
+        <field name="name">AgentUI</field>
+        <field name="action" ref="action_agentui_main"/>
+        <field name="sequence">90</field>
+        <field name="web_icon_data" type="base64" file="agentui_online/static/description/icon.png"/>
+    </record>
+
+    <!-- AgentUI addresses (administrators, developer mode: hub ... menu). -->
+    <record id="view_x_agentui_settings_form" model="ir.ui.view">
+        <field name="name">x_agentui_settings.form</field>
+        <field name="model">x_agentui_settings</field>
+        <field name="arch" type="xml">
+            <form string="AgentUI addresses" create="false" delete="false">
+                <sheet>
+                    <group>
+                        <field name="x_api_url" required="1"/>
+                        <field name="x_app_url" required="1"/>
+                        <field name="x_connected" readonly="1"/>
+                        <field name="x_company_name" readonly="1"/>
+                        <field name="x_integration_id" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_x_agentui_settings" model="ir.actions.act_window">
+        <field name="name">AgentUI addresses</field>
+        <field name="res_model">x_agentui_settings</field>
+        <field name="view_mode">form</field>
+        <field name="res_id" ref="settings_main"/>
+        <field name="view_id" ref="view_x_agentui_settings_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -1,0 +1,610 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* agentui_online
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
+"Plural-Forms: \n"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "A dashboard of this month's sales by salesperson, with overdue invoices per customer"
+msgstr "Un dashboard de las ventas del mes por vendedor, con las facturas vencidas de cada cliente"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "A mobile form for technicians to log each visit with photos, parts used and the customer's signature"
+msgstr "Un formulario móvil para que los técnicos registren cada visita con fotos, repuestos usados y la firma del cliente"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "A portal where my customers see their orders and invoices"
+msgstr "Un portal donde mis clientes ven sus pedidos y facturas"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub_apps.js:0
+msgid "Activity"
+msgstr "Actividad"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Adding your apps to Odoo..."
+msgstr "Agregando tus apps a Odoo..."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "AgentUI addresses"
+msgstr "Direcciones de AgentUI"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/sync.js:0
+msgid "AgentUI answered %(status)s while listing apps: %(error)s"
+msgstr "AgentUI respondió %(status)s al listar las apps: %(error)s"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/sync.js:0
+msgid "AgentUI answered %(status)s. Nothing was disconnected; try again in a minute."
+msgstr "AgentUI respondió %(status)s. No se desconectó nada; inténtalo de nuevo en un minuto."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/connect.js:0
+msgid "AgentUI could not finish the connection. Press Connect to AgentUI again."
+msgstr "AgentUI no pudo terminar la conexión. Presiona Conectar con AgentUI de nuevo."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/api.js:0
+msgid "AgentUI did not answer (%(reason)s). Check your internet connection and try again."
+msgstr "AgentUI no respondió (%(reason)s). Revisa tu conexión a internet e inténtalo de nuevo."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/connect.js:0
+msgid "AgentUI did not send a connection code. Press Connect to AgentUI again."
+msgstr "AgentUI no envió un código de conexión. Presiona Conectar con AgentUI de nuevo."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "AgentUI disconnected"
+msgstr "AgentUI desconectado"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/sync.js:0
+msgid "AgentUI no longer accepts this connection. Press Connect to AgentUI to connect again."
+msgstr "AgentUI ya no acepta esta conexión. Presiona Conectar con AgentUI para conectar de nuevo."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "AgentUI stopped accepting this connection. Your apps are still here; reconnect to keep them in sync."
+msgstr "AgentUI dejó de aceptar esta conexión. Tus apps siguen aquí; vuelve a conectar para mantenerlas al día."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "An Odoo administrator connects AgentUI once."
+msgstr "Un administrador de Odoo conecta AgentUI una sola vez."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Approval flow"
+msgstr "Flujo de aprobación"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Approve the connection in the AgentUI window. This page finishes on its own."
+msgstr "Aprueba la conexión en la ventana de AgentUI. Esta página termina sola."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Apps / Dashboards"
+msgstr "Apps / Dashboards"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Apps synced"
+msgstr "Apps sincronizadas"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Ask an Odoo administrator to open this menu and press Connect to AgentUI."
+msgstr "Pide a un administrador de Odoo que abra este menú y presione Conectar con AgentUI."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Ask an Odoo administrator to reconnect."
+msgstr "Pide a un administrador de Odoo que vuelva a conectar."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Automations"
+msgstr "Automatizaciones"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Build an app"
+msgstr "Crear una app"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Build an automation"
+msgstr "Crear una automatización"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Build apps on your Odoo data"
+msgstr "Crea apps sobre tus datos de Odoo"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Build it"
+msgstr "Crear la app"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/password_dialog.xml:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/password_dialog.xml:0
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/password_dialog.xml:0
+msgid "Confirm your Odoo password to create the API key for AgentUI."
+msgstr "Confirma tu contraseña de Odoo para crear la clave API de AgentUI."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/password_dialog.xml:0
+msgid "Confirm your password"
+msgstr "Confirma tu contraseña"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Connect"
+msgstr "Conecta"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Connect to AgentUI"
+msgstr "Conectar con AgentUI"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Connected to"
+msgstr "Conectado a"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Connecting…"
+msgstr "Conectando…"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Connection settings"
+msgstr "Ajustes de la conexión"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Customer portal"
+msgstr "Portal de clientes"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Daily sales summary"
+msgstr "Resumen diario de ventas"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub_apps.js:0
+msgid "Data"
+msgstr "Datos"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub_apps.js:0
+msgid "Data security"
+msgstr "Seguridad de datos"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Describe"
+msgstr "Describe"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Describe it in your own words. AgentUI builds it on your Odoo data."
+msgstr "Descríbela con tus palabras. AgentUI la crea sobre tus datos de Odoo."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Describe the app you need. AgentUI builds it, and it opens from your Odoo home menu."
+msgstr "Describe la app que necesitas. AgentUI la crea y se abre desde el menú principal de Odoo."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Describe the task in your own words. AgentUI runs it on your Odoo data, on a schedule."
+msgstr "Describe la tarea con tus palabras. AgentUI la ejecuta sobre tus datos de Odoo, según un horario."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Disconnect"
+msgstr "Desconectar"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub_apps.js:0
+msgid "Domains"
+msgstr "Dominios"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Each app gets its own entry in the Odoo home menu."
+msgstr "Cada app tiene su propia entrada en el menú principal de Odoo."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub_apps.js:0
+msgid "Edit with AI"
+msgstr "Editar con IA"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Every day at 6 PM, email me a summary of today's sales orders by salesperson"
+msgstr "Todos los días a las 6 PM, enviarme un resumen de los pedidos de venta del día por vendedor"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Every hour, email the sales team the new CRM leads with their contact details"
+msgstr "Cada hora, enviar al equipo de ventas los nuevos leads del CRM con sus datos de contacto"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Every morning, email each customer with an overdue invoice a friendly reminder with the amount due"
+msgstr "Cada mañana, enviar a cada cliente con una factura vencida un recordatorio amable con el monto pendiente"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Every morning, email the purchasing team the products below their minimum stock"
+msgstr "Cada mañana, enviar al equipo de compras los productos por debajo de su stock mínimo"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Example: a dashboard of this month's sales by salesperson, with overdue invoices per customer"
+msgstr "Ejemplo: un dashboard de las ventas del mes por vendedor, con las facturas vencidas de cada cliente"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Example: every morning, email each customer with an overdue invoice a reminder with the amount due"
+msgstr "Ejemplo: cada mañana, enviar a cada cliente con una factura vencida un recordatorio con el monto pendiente"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Field service form"
+msgstr "Formulario de servicio técnico"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub_apps.js:0
+msgid "Integrations"
+msgstr "Integraciones"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Low stock alert"
+msgstr "Alerta de stock bajo"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub_apps.xml:0
+msgid "Manage %(name)s"
+msgstr "Administrar %(name)s"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub_apps.xml:0
+msgid "Manage app"
+msgstr "Gestionar app"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "New app added. Reload the page to see it on the home screen."
+msgstr "App nueva agregada. Recarga la página para verla en la pantalla de inicio."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "New leads digest"
+msgstr "Resumen de nuevos leads"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub_apps.xml:0
+msgid "No apps match your search."
+msgstr "Ninguna app coincide con tu búsqueda."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub_apps.xml:0
+msgid "No apps yet"
+msgstr "Aún no hay apps"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/sync.js:0
+msgid "Nothing was disconnected."
+msgstr "No se desconectó nada."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/api_key.js:0
+msgid "Odoo did not create the API key. Press Connect to AgentUI again."
+msgstr "Odoo no creó la clave API. Presiona Conectar con AgentUI de nuevo."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/sync.js:0
+msgid "Odoo is not connected to AgentUI yet. Press Connect to AgentUI."
+msgstr "Odoo aún no está conectado con AgentUI. Presiona Conectar con AgentUI."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/password_dialog.xml:0
+msgid "Odoo password"
+msgstr "Contraseña de Odoo"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Open in a new tab"
+msgstr "Abrir en una pestaña nueva"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Open it in Odoo"
+msgstr "Ábrela en Odoo"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/builder.xml:0
+msgid "Opening AgentUI…"
+msgstr "Abriendo AgentUI…"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/app.xml:0
+msgid "Opening the app…"
+msgstr "Abriendo la app…"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Overdue invoice reminders"
+msgstr "Recordatorios de facturas vencidas"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub_apps.xml:0
+msgid "Pick an idea above or describe your own. Your app shows up here and in the Odoo home menu."
+msgstr "Elige una idea de arriba o describe la tuya. Tu app aparece aquí y en el menú principal de Odoo."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Purchase approvals: a manager approves or rejects each purchase order, with a comment"
+msgstr "Aprobación de compras: un gerente aprueba o rechaza cada orden de compra, con un comentario"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Reconnect"
+msgstr "Volver a conectar"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Sales dashboard"
+msgstr "Dashboard de ventas"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub_apps.xml:0
+msgid "Search apps"
+msgstr "Buscar apps"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub_apps.js:0
+msgid "Settings"
+msgstr "Ajustes"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Sign in or create a free AgentUI account, then approve. Odoo creates the API key for you, so there is nothing to copy."
+msgstr "Inicia sesión o crea una cuenta gratis de AgentUI y aprueba. Odoo crea la clave API por ti, así que no hay nada que copiar."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub_apps.js:0
+msgid "Sign-in"
+msgstr "Inicio de sesión"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Signed in to AgentUI as"
+msgstr "Sesión de AgentUI iniciada como"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/api_key.js:0
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Something went wrong. Try again."
+msgstr "Algo salió mal. Inténtalo de nuevo."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Sync apps"
+msgstr "Sincronizar apps"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/connect.js:0
+msgid "The AgentUI module is missing its data. Import the module again."
+msgstr "Al módulo de AgentUI le faltan sus datos. Importa el módulo de nuevo."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/connect.js:0
+msgid "The connection took too long. Press Connect to AgentUI again."
+msgstr "La conexión tardó demasiado. Pulsa Conectar con AgentUI de nuevo."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/connect.js:0
+msgid "The connection was cancelled in AgentUI."
+msgstr "La conexión se canceló en AgentUI."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/app.js:0
+msgid "This AgentUI app is no longer available. Ask an Odoo administrator to open the AgentUI menu and press Sync apps."
+msgstr "Esta app de AgentUI ya no está disponible. Pide a un administrador de Odoo que abra el menú AgentUI y presione Sincronizar apps."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/api.js:0
+msgid "timed out"
+msgstr "se agotó el tiempo"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "Try:"
+msgstr "Prueba:"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub_apps.js:0
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "What app or dashboard do you need?"
+msgstr "¿Qué app o dashboard necesitas?"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "What do you want to automate?"
+msgstr "¿Qué quieres automatizar?"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.xml:0
+msgid "What to build"
+msgstr "Qué crear"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Write the app you need, like you would to a colleague."
+msgstr "Escribe la app que necesitas, como se lo dirías a un compañero."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/password_dialog.xml:0
+msgid "You sign in to Odoo with Google or Odoo.com? Use your odoo.com account password. No password yet: open odoo.com, choose Reset password, then come back."
+msgstr "¿Entras a Odoo con Google u Odoo.com? Usa la contraseña de tu cuenta de odoo.com. ¿Aún no tienes? Entra a odoo.com, elige Restablecer contraseña y vuelve."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub_apps.xml:0
+msgid "Your apps"
+msgstr "Tus apps"
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Your automation runs in AgentUI. You can see each run there."
+msgstr "Tu automatización se ejecuta en AgentUI. Ahí puedes ver cada ejecución."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/connect.js:0
+msgid "Your browser blocked the AgentUI window. Allow pop-ups for this page and press Connect to AgentUI again."
+msgstr "Tu navegador bloqueó la ventana de AgentUI. Permite ventanas emergentes para esta página y presiona Conectar con AgentUI de nuevo."
+
+#. module: agentui_online
+#. odoo-javascript
+#: code:addons/agentui_online/static/src/hub.js:0
+msgid "Your new app shows up below and in the Odoo home menu."
+msgstr "Tu nueva app aparece abajo y en el menú principal de Odoo."

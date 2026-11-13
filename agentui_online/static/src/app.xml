@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="agentui_online.App">
+        <div class="o_agentui o_agentui_with_bar h-100">
+            <div class="o_agentui_topbar">
+                <button type="button" class="btn btn-link btn-sm o_agentui_back" t-on-click="(ev) => this.goBack(ev)">
+                    <i class="fa fa-arrow-left me-2" aria-hidden="true" />AgentUI
+                </button>
+                <span class="o_agentui_topbar_title text-truncate" t-out="this.state.app?.name or ''" />
+            </div>
+            <div class="o_agentui_body position-relative">
+                <div t-if="this.state.error" class="o_agentui_loading" role="alert">
+                    <i class="fa fa-exclamation-circle fa-2x text-muted" aria-hidden="true" />
+                    <span class="text-muted" t-out="this.state.error" />
+                </div>
+                <t t-else="">
+                    <div t-if="this.state.loading" class="o_agentui_loading" role="status">
+                        <img t-att-src="this.iconSrc" alt="" class="o_agentui_loading_logo" />
+                        <div class="spinner-border spinner-border-sm text-secondary" aria-hidden="true" />
+                        <span class="text-muted small" t-out="this.tr('Opening the app…')" />
+                    </div>
+                    <iframe class="o_agentui_frame" t-att-src="this.state.app.url" t-att-title="this.state.app.name"
+                            t-on-load="() => this.state.loading = false"
+                            allow="clipboard-write; camera; microphone; geolocation" />
+                </t>
+            </div>
+        </div>
+    </t>
+</templates>

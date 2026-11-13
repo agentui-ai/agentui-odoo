@@ -1,0 +1,27 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">AgentUI for Odoo Online</h2>
+        <h3 class="oe_slogan">Build apps and dashboards on your Odoo data. Describe what you need; AI builds it.</h3>
+        <p>
+            This version is made for <b>Odoo Online</b> (odoo.com), where modules with Python can't be installed.
+            It has no Python. On Odoo.sh or on-premise, install <b>agentui_connector</b> instead.
+        </p>
+        <h3>Requirements</h3>
+        <ul>
+            <li>Odoo Online on the <b>Custom plan</b>. Odoo only lets other apps connect to your database (external API) on that plan.</li>
+            <li>An Odoo administrator, with developer mode turned on.</li>
+        </ul>
+        <h3>Install</h3>
+        <ol>
+            <li>Turn on developer mode: Settings &rarr; Activate the developer mode.</li>
+            <li>Open Apps &rarr; Import Module, pick <code>agentui_online.zip</code> and press Import.</li>
+            <li>Open the new <b>AgentUI</b> menu and press <b>Connect to AgentUI</b>. Approve in the AgentUI window and confirm your Odoo password: Odoo creates the API key for AgentUI, so there is nothing to copy.</li>
+            <li>Each AgentUI app gets its own entry in the Odoo home menu. Employees open them like any Odoo app.</li>
+        </ol>
+        <h3>Good to know</h3>
+        <ul>
+            <li>Apps open already signed in for app users whose email is their Odoo login.</li>
+            <li>Disconnect any time from the AgentUI menu. The API key is listed in your Odoo preferences (Account Security).</li>
+        </ul>
+    </div>
+</section>
