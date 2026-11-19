@@ -1,8 +1,8 @@
-# AI App Builder for Odoo Online | AgentUI (Odoo 20)
+# AI App Builder for Odoo Online | AgentUI (Odoo 19)
 
 **Build custom apps, dashboards and customer portals on your Odoo data. Describe what you need and AgentUI builds it. No code.**
 
-This branch (`20.0`) holds **`agentui_online`**, the AgentUI module for **Odoo Online** (odoo.com) on Odoo 20: a data module with no Python, so Odoo Online accepts it.
+This branch (`19.0`) holds **`agentui_online`**, the AgentUI module for **Odoo Online** (odoo.com) on Odoo 19: a data module with no Python, so Odoo Online accepts it.
 
 ## Requirements
 - Odoo Online on the **Custom** plan (Odoo only allows connecting other apps, its external API, on that plan). Odoo.sh and on-premise work too.
@@ -16,6 +16,6 @@ This branch (`20.0`) holds **`agentui_online`**, the AgentUI module for **Odoo O
 If you sign in to Odoo with Google or Odoo.com, the password Odoo asks for is your odoo.com account password (reset it on odoo.com if you never set one).
 
 ## Source
-The source lives on branch [`18.0`](https://github.com/agentui-ai/agentui-odoo/tree/18.0) (`agentui_online/`); this branch is built from it with `node tools/build_online.mjs 20` (Odoo 20 uses `ir.access` instead of `ir.model.access` + `ir.rule`).
+The source lives on branch [`18.0`](https://github.com/agentui-ai/agentui-odoo/tree/18.0) (`agentui_online/`); this branch is built from it with `node tools/build_online.mjs 19` (Odoo 19 keeps `ir.model.access` + `ir.rule`, like 18; the menu groups field is `group_ids`).
 
 License: LGPL-3.

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Who can do what. No line for a group = no access at all (AccessError).
+  - x_agentui_app: employees read (to open apps), administrators manage (Sync).
+  - x_agentui_settings: employees read (connected or not, addresses), administrators write.
+  - x_agentui_secret: administrators only. Employees must never read the connector token.
+  - x_agentui_signin: employees create and read only their own proofs (record
+    rule on create_uid), never change or delete one; administrators (the API
+    key AgentUI uses) read and delete all.
+-->
+<odoo>
+    <record id="access_x_agentui_app_user" model="ir.model.access">
+        <field name="name">x_agentui_app employees read</field>
+        <field name="model_id" ref="model_x_agentui_app"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    <record id="access_x_agentui_app_admin" model="ir.model.access">
+        <field name="name">x_agentui_app administrators</field>
+        <field name="model_id" ref="model_x_agentui_app"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+    <record id="access_x_agentui_settings_user" model="ir.model.access">
+        <field name="name">x_agentui_settings employees read</field>
+        <field name="model_id" ref="model_x_agentui_settings"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    <record id="access_x_agentui_settings_admin" model="ir.model.access">
+        <field name="name">x_agentui_settings administrators</field>
+        <field name="model_id" ref="model_x_agentui_settings"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    <record id="access_x_agentui_secret_admin" model="ir.model.access">
+        <field name="name">x_agentui_secret administrators only</field>
+        <field name="model_id" ref="model_x_agentui_secret"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    <record id="access_x_agentui_signin_user" model="ir.model.access">
+        <field name="name">x_agentui_signin employees create own</field>
+        <field name="model_id" ref="model_x_agentui_signin"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    <record id="access_x_agentui_signin_admin" model="ir.model.access">
+        <field name="name">x_agentui_signin administrators</field>
+        <field name="model_id" ref="model_x_agentui_signin"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+    <record id="rule_x_agentui_signin_own" model="ir.rule">
+        <field name="name">AgentUI sign-in proofs: employees see their own</field>
+        <field name="model_id" ref="model_x_agentui_signin"/>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        <field name="domain_force">[('create_uid', '=', user.id)]</field>
+    </record>
+    <record id="rule_x_agentui_signin_admin" model="ir.rule">
+        <field name="name">AgentUI sign-in proofs: administrators see all</field>
+        <field name="model_id" ref="model_x_agentui_signin"/>
+        <field name="groups" eval="[(4, ref('base.group_system'))]"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+    </record>
+</odoo>

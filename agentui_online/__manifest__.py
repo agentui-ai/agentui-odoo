@@ -1,7 +1,7 @@
 {
     "name": "AI App Builder for Odoo Online | AgentUI",
     "summary": "Build custom apps, dashboards and customer portals on your Odoo data. Made for Odoo Online on the Custom plan: no Python, install it from Apps > Import Module.",
-    "version": "20.0.2.0.1",
+    "version": "19.0.2.0.1",
     "category": "Productivity",
     "author": "AgentUI",
     "website": "https://agentui.ai",
@@ -11,7 +11,7 @@
     # access rules are ir.model.access records, logic runs in the browser.
     "data": [
         "data/models.xml",
-        "security/access_ir_access.xml",
+        "security/access.xml",
         "data/records.xml",
         "views/views.xml",
     ],
