@@ -1,6 +1,6 @@
 /** @odoo-module **/
 import * as owl from "@odoo/owl";
-import { user } from "@web/core/user";
+import { user } from "./compat_user";
 
 export const MODULE = "agentui_online";
 export const HUB_MENU_XMLID = "agentui_online.menu_agentui_root";

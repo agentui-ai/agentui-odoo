@@ -1,11 +1,11 @@
-# AI App Builder for Odoo Online | AgentUI (Odoo 19)
+# AI App Builder for Odoo | AgentUI (Odoo 16)
 
 **Build custom apps, dashboards and customer portals on your Odoo data. Describe what you need and AgentUI builds it. No code.**
 
-This branch (`19.0`) holds **`agentui_online`**, the AgentUI module for **Odoo Online** (odoo.com) on Odoo 19: a data module with no Python, so Odoo Online accepts it.
+This branch (`16.0`) holds **`agentui_online`** for **Odoo 16** on Odoo.sh or on-premise: a data module with no Python. (Odoo Online no longer runs Odoo 16; Odoo Online customers use the 18, 19 or 20 branch.)
 
 ## Requirements
-- Odoo Online on the **Custom** plan (Odoo only allows connecting other apps, its external API, on that plan). Odoo.sh and on-premise work too.
+- Odoo 16 on Odoo.sh or on-premise.
 - An Odoo administrator to connect it once.
 
 ## Install
@@ -13,9 +13,7 @@ This branch (`19.0`) holds **`agentui_online`**, the AgentUI module for **Odoo O
 2. Zip install: activate developer mode, then **Apps → Import Module**, upload the zip, Install.
 3. Open **AgentUI** on the Odoo home screen and press **Connect to AgentUI**. Approve in the AgentUI window and confirm your Odoo password: the module creates the API key for you.
 
-If you sign in to Odoo with Google or Odoo.com, the password Odoo asks for is your odoo.com account password (reset it on odoo.com if you never set one).
-
 ## Source
-The source lives on branch [`18.0`](https://github.com/agentui-ai/agentui-odoo/tree/18.0) (`agentui_online/`); this branch is built from it with `node tools/build_online.mjs 19` (Odoo 19 keeps `ir.model.access` + `ir.rule`, like 18; the menu groups field is `group_ids`).
+The source lives on branch [`18.0`](https://github.com/agentui-ai/agentui-odoo/tree/18.0) (`agentui_online/`); this branch is built from it with `node tools/build_online.mjs 16` (it swaps in a stand-in for `@web/core/user`, the older Dropdown markup, and `owl="1"` on templates).
 
 License: LGPL-3.

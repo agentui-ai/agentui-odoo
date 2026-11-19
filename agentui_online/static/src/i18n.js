@@ -1,6 +1,6 @@
 /** @odoo-module **/
 import { _t } from "@web/core/l10n/translation";
-import { user } from "@web/core/user";
+import { user } from "./compat_user";
 import { ES } from "./i18n_es";
 
 /**
