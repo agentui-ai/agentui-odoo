@@ -1,5 +1,5 @@
 /** @odoo-module **/
-import { user } from "@web/core/user";
+import { user } from "./compat_user";
 import { tr } from "./i18n";
 import { AgentUIPasswordDialog } from "./password_dialog";
 
@@ -49,7 +49,7 @@ function confirmPassword(orm, dialog, wizardId) {
  * Returns the key, or null if the admin cancelled the password check.
  */
 export async function createApiKey(orm, dialog) {
-    const [descriptionId] = await orm.silent.create("res.users.apikeys.description", [{ name: KEY_NAME, duration: "0" }]);
+    const [descriptionId] = await orm.silent.create("res.users.apikeys.description", [{ name: KEY_NAME }]);
     let result = await orm.silent.call("res.users.apikeys.description", "make_key", [[descriptionId]]);
     if (result?.res_model === "res.users.identitycheck" && result.res_id) {
         result = await confirmPassword(orm, dialog, result.res_id);

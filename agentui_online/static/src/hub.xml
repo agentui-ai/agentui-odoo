@@ -44,11 +44,9 @@
                     <span t-out="this.tr('Connected to')" /> <b t-out="this.state.info.connected_company" />
                 </div>
             </div>
-            <Dropdown t-if="this.state.info.is_admin" position="'bottom-end'">
-                <button class="btn btn-light o_agentui_more" t-att-disabled="this.state.busy" t-att-title="this.tr('Connection settings')" t-att-aria-label="this.tr('Connection settings')">
+            <Dropdown t-if="this.state.info.is_admin" position="'bottom-end'" togglerClass="'btn btn-light o_agentui_more'" title="this.tr('Connection settings')" disabled="this.state.busy"><t t-set-slot="toggler">
                     <i class="fa fa-ellipsis-h fa-lg" aria-hidden="true" />
-                </button>
-                <t t-set-slot="content">
+                </t>
                     <div t-if="this.state.info.connected_email" class="dropdown-header small text-muted text-wrap">
                         <span t-out="this.tr('Signed in to AgentUI as')" /><br /><b t-out="this.state.info.connected_email" />
                     </div>
@@ -56,8 +54,7 @@
                     <DropdownItem onSelected="(...args) => this.sync(...args)"><i class="fa fa-refresh me-2" aria-hidden="true" /><t t-out="this.tr('Sync apps')" /></DropdownItem>
                     <DropdownItem t-if="this.debug" onSelected="(...args) => this.editAddresses(...args)"><i class="fa fa-server me-2" aria-hidden="true" /><t t-out="this.tr('AgentUI addresses')" /></DropdownItem>
                     <DropdownItem onSelected="(...args) => this.disconnect(...args)" class="'text-danger'"><i class="fa fa-chain-broken me-2" aria-hidden="true" /><t t-out="this.tr('Disconnect')" /></DropdownItem>
-                </t>
-            </Dropdown>
+                </Dropdown>
         </div>
     </t>
 

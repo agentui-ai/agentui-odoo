@@ -24,19 +24,16 @@
             <div class="row g-3">
                 <div t-foreach="this.visibleApps" t-as="app" t-key="app.id" class="col-12 col-sm-6 col-xl-4 position-relative">
                     <div t-if="this.props.onManage" class="o_agentui_card_menu">
-                        <Dropdown position="'bottom-end'">
-                            <button class="btn btn-light btn-sm o_agentui_more" t-att-title="this.tr('Manage %(name)s', { name: app.name })" t-att-aria-label="this.tr('Manage app')">
+                        <Dropdown position="'bottom-end'" togglerClass="'btn btn-light btn-sm o_agentui_more'" title="this.tr('Manage %(name)s', { name: app.name })"><t t-set-slot="toggler">
                                 <i class="fa fa-ellipsis-h" aria-hidden="true" />
-                            </button>
-                            <t t-set-slot="content">
+                            </t>
                                 <t t-foreach="this.manageItems" t-as="item" t-key="item.key">
                                     <div t-if="item.key === 'users'" class="dropdown-divider" />
                                     <DropdownItem onSelected="() => this.props.onManage(app, item)">
                                         <i t-attf-class="fa {{ item.icon }} me-2 text-muted" aria-hidden="true" /><t t-out="item.label" />
                                     </DropdownItem>
                                 </t>
-                            </t>
-                        </Dropdown>
+                            </Dropdown>
                     </div>
                     <a href="#" class="o_agentui_card d-flex gap-3 align-items-start h-100 text-reset text-decoration-none"
                        t-att-title="app.name" t-on-click.prevent="() => this.props.onOpen(app)">
