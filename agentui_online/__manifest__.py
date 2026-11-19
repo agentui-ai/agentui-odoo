@@ -1,7 +1,7 @@
 {
     "name": "AI App Builder for Odoo Online | AgentUI",
     "summary": "Build custom apps, dashboards and customer portals on your Odoo data. Made for Odoo Online on the Custom plan: no Python, install it from Apps > Import Module.",
-    "version": "18.0.2.0.1",
+    "version": "18.0.2.0.2",
     "category": "Productivity",
     "author": "AgentUI",
     "website": "https://agentui.ai",
